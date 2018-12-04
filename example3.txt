@@ -1,0 +1,443 @@
+<p>
+    <input type="text" class="dews-ui-textbox">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox" placeholder="hiden텍스트를 정의">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox" value="default값을 정의">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox required" value="필수 입력">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox" readonly="readonly" value="readonly">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox" disabled="disabled" value="disabled">
+</p>
+<p>
+    <input type="password" class="dews-ui-textbox password" >
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox text-status-error" value = "error">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox text-status-warning" value="warning">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox text-status-success" value="success">
+</p>
+
+<textarea class="dews-ui-textbox"></textarea> //멀티라인
+<script>dews.demo.source('textbox_manual','multiline');</script>
+
+<p>
+    <input type="text" class="dews-ui-textbox" id="tbx">
+</p>
+<p>
+    <button class="dews-ui-button" id="btn1">읽기전용 설정</button>
+    <button class="dews-ui-button" id="btn2">읽기전용 해제</button>
+    <button class="dews-ui-button" id="btn3">읽기전용 여부</button>
+</p>
+
+dews.ready(function(){
+    var self = this;
+    var tbx1 = self.tbx
+
+    self.$btn1.on('click',function(e){
+        tbx1.readonly(true);
+    });
+    self.$btn2.on('click',function(e){
+        tbx1.readonly(false);
+    });
+    self.$btn3.on('click',function(e){
+        alert(tbx1.readonly());
+    });
+});
+
+<p>
+    <input type="text" class="dews-ui-textbox" id="tbx">
+</p>
+<p>
+    <button class="dews-ui-button" id="btn1">활성화</button>
+    <button class="dews-ui-button" id="btn2">비활성화</button>
+    <button class="dews-ui-button" id="btn3">비활성화 여부</button>
+</p>
+
+<script>
+    dews.ready(function(){
+        var self=this;
+
+        self.$btn1.on('click',function(e){
+            self.tbx.enable(true);
+        });
+
+        self.$btn2.on('click',function(e){
+            self.tbx.enable(false);
+        });
+
+        self.$btn3.on('click',function(e){
+            alert(self.tbx.enable());
+        });
+    });
+</script>
+
+<p>
+    <input type="text" id="txbox" class="dews-ui-textbox">
+</p>
+<style scoped="">
+    #txbox {width:20px};
+</style>
+
+-> 
+<p>
+    <input type="text" class="dews-ui-textbox" style="width:96px">
+</p>
+
+
+/*data-dews-decimals :소수점
+  data-dews-step : 방향키로 숫자만큼 증감
+  data-dews-spinners : 숫자를 증감시킬 수 있는 막대기
+  +를 누르면 클래스 상관없이 값 증가
+  data-dews-increase-value : 지정된 값만큼 +눌렀을 때 값 증가 (기본은 Plus)
+  data-dews-increase-type : multiple로 지정되면 곱셈
+  data-dews-format : 지정된 포맷 문자열
+  data-dews-format-predefined : 공통 포맷 사용 여부(default=false) = 포맷값을 따로 지정해주지 않으면 #,##0,## 으로 지정
+  data-dews-restrict-decimals : 소수점 자리 입력 제한
+  data-dews-select-on-focus :클릭 시 전체 선택 여부 (default = false)
+*/
+<p>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-select-on-focus="true" data-dews-decimals="2">
+</p>
+<p>
+    <input type="text" class="dews-ui-numerictextbox" value="100000">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox required" value="0">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox disabled" value="300">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox readonly" value="0">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-spinners="true">
+</p>
+<p>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-spinners="true" disabled="disabled">
+</p>
+
+<p>
+    <label>스피너 버튼이 있는 경우: </label>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-spinners="true" data-dews-step="0.1" value="1">
+</p>
+
+<p>
+    <label>스피너 버튼이 없는 경우-방향이(위/아래) 이용</label>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-step="0.1" value="2">
+</p>
+
+<p>
+    <label>방향키를 이용한 증가 및 감소 사용하지 않도록 설정</label>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-step="0" value="10">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-step="1" data-dews-increase-value="500">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-step="1" data-dews-increase-value="500" data-dews-increase-type="multiple">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-format="#,##0,00">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-numerictextbox" data-dews-format-predefined="true">
+</p>
+
+<p></p>
+
+/*
+    max , min 최대값 최소값 설정
+*/
+
+data-dews-mask : 마스크 문자열
+data-dews-prompt : 프롬프트 문자열 지정 // 지정되어 있음
+data-dews-unmask-on-post : Post시 마스크문자열을 제거할 지 여부
+
+<p>
+    <input tpye="text" class="dews-ui-maskedtextbox" data-dews-mask ="000-000" value="201501">
+</p>
+<p>
+    <input type="text" class="dews-ui-maskedtextbox" data-dews-mask ="##-###-####" value="021921225">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-maskedtextbox" data-dews-prompt="*" data-dews-mask="LL-0000">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-masked" data-dews-mask="LL-0000" data-dews-unmask-on-post ="false">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-maskedtextbox required" value="required">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-maskedtextbox" readonly="readonly" value="readonly">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-maskedtextbox" disabled="disabled" value="disabled">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-maskedtextbox error" value = "error">
+</p>
+
+<p>
+    <input type="text" class="dews-ui-maskedtextbox" id="mskbx" data-dews-mask="LL-00">
+</p>
+
+<button class="dews-ui-button" id = "button" >포맷이 적용된 값 가져오기 : value</button>
+<button class="dews-ui-button" id = "button1"> 포맷이 적용되지 않은 값 가져오기 : raw</button>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+
+        self.$button.on('click',function(e){
+            alert(self.mskbx.value());
+        });
+        self.$button.on('click',function(e){
+            alert(self.mskbx.raw());
+        })
+    });
+</script>
+
+<p>
+    <input type="text" class="dews-ui-maskedtextbox" id="mskbx" data-dews-mask="LL-00">
+</p>
+<p>    
+    <button class="dews-ui-button" id = "button" >마스크 포맷이 적용된 값 가져오기 : value</button>
+    <button class="dews-ui-button" id = "button1"> 마스크 포맷이 적용되지 않은 값 가져오기 : raw</button>
+</p>
+
+<p>
+    <input type="checkbox" id="chk1" class="dews-ui-checkbox">
+    <label for="chk1">체크박스 - 기본</label>
+</p>
+<p>
+    <input type="checkbox" id="chk2" class="dews-ui-checkbox" checked="checked">
+    <label for="chk2">체크박스 - 체크됨</label>
+</p>
+<p>
+    <input type="checkbox" id="chk3" class="dews-ui-checkbox" checked="checked" disabled="disabled">
+    <label for="chk3">체크박스 - 비활성화</label>
+</p>
+
+<p>
+    <input type="checkbox" id="chk1" class="dews-ui-checkbox" checked="checked">
+    <label for="chk1">체크박스 - 기본</label>
+    <input type="checkbox" id="chk2" class="dews-ui-checkbox" checked="checked">
+    <label for="chk2">체크박스 - 체크됨</label>
+    <input type="checkbox" id="chk3" class="dews-ui-checkbox" checked="checked" disabled="disabled">
+    <label for="chk3">체크박스 - 비활성화</label>
+</p>
+
+<p>
+    <input type="checkbox" id="chk4" class="dews-ui-checkbox bookmark">
+    <label for="chk4"></label> 
+</p>
+
+<p>
+    <input type="checkbox" id="chk5" class="dews-ui-checkbox toggle">
+    <label for="chk5"></label>
+</p>
+
+/*
+    data-dews-align = horizontal,vertical;
+*/
+
+<p>
+    <input type="radio" id="rdo1" name="radio1" class="dews-ui-radio">
+    <label for="rdo1">라디오#1</label>
+    <input type="radio" id="rdo2" name="radio1" class="dews-ui-radio">
+    <label for="rdo2">라디오#2</label>
+</p>
+
+<p>
+    <select class="dews-ui-radio-group" id="radio-group1" disabled="disabled">
+        <option value="radio1">라디오버튼1</option>
+        <option value="radio2">라디오버튼2</option>
+        <option value="radio3">라디오버튼3</option>
+    </select>
+</p>
+
+<p>
+    <select class="dews-ui-radio-group" id="radio-group2" data-dews-align="vertical">
+        <option value = "radio1">라디오버튼1</option>
+        <option value = "radio2" selected="">라디오버튼2</option>
+        <option value = "radio3" disabled="">라디오버튼3</option>
+    </select>
+</p>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        var myItem = self.radiogroup.items[0];
+    })
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        self.radiogroup.add("radio","라디오아이템1"); // add는 뒤에 추가하는 경우
+        self.radiogroup.add(object);
+    })
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        self.radiogroup.insert(1,"radio2","라디오아이템2");
+        self.radiogroup.insert(1,object)  
+    })
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        self.radiogroup.remove(1);
+        self.radiogroup.remove(object);
+    })
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        self.radiogroup.getByValue("radio1"); // 라디오 그룹 내에서 value와 동일한 값을 반환합니다.
+    })
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        self.radiogroup.select("radio1"); // 라디오 그룹내에서 아이템을 선택합니다.
+    })
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        self.radiogroup.disable(true); // 라디오 그룹 비활성화
+    })
+</script>
+
+<script>
+dews.ready(function () {
+    var self = this;
+    self.radiogroup.items[0].value("radio1");
+  });
+</script>
+
+<script>
+  dews.ready(function () {
+    var self = this;
+    self.radiogroup.items[0].text("라디오버튼1");
+  });
+</script>
+
+<p>
+    <select id="cho" class="dews-ui-combobox">
+        <option value="value1">text1</option>
+        <option value="value2">text2</option>
+        <option value="value3">text3</option>
+        <option value="value4">text4</option>
+    </select>
+</p>
+
+<p>
+    <select id="cho2" class="dews-ui-combobox" disabled="disabled">
+        <option value="value1">disabled</option>
+        <option value="value2">text2</option>
+        <option value="value3">text3</option>
+    </select>
+</p>
+
+<p>
+    <select id="cho3" class="dews-ui-combobox required" value="required">
+        <option value="value1">required</option>
+        <option value="value2">text2</option>
+        <option value="value3">text3</option>
+    </select>
+</p>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        var item = self.combobox.dataItem(0);
+    });
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+
+        self.combobox.readonly(true);
+        var readonly = self.combobox.readonly();
+    });
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+
+        self.combobox.enable(true);
+        var enable = self.combobox.enable();
+    });
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+        self.combobox.focus();
+    });
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+
+        self.combobox.select("Apple");
+        var sel = self.combobox.select();
+    });
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+
+        self.combobox.text("Apple");
+        var text = self.combobox.text();
+    });
+</script>
+
+<script>
+    dews.ready(function(){
+        var self = this;
+
+        self.combobox.value("Apple");
+        var val = self.combobox.value();
+    });
+</script>

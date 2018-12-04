@@ -1,0 +1,175 @@
+
+    /*  컨테이너 패널 - 그리드와 폼패널이 합쳐진 패널 , 그리드 형태의 패널에서 행을 선택하고 폼 패널에서 값을 조회하거나 변경 가능
+        dews-ui-container-panel : 클래스를 지정하여 사용합니다. // 전체적인 틀
+        dews-container-item : 클래스를 지정하여 컨테이너 아이템을 사용합니다.
+        옵션 ( 패널 속성 )
+        data-dews-container-height number 컨테이너 패널의 높이 설정
+        data-dews-fit-bottom boolean 컨테이너 패널 자동 높이 조정 
+        옵션 ( 패널 아이템 속성 )
+        data-dews-position string 컨테이너 아이템의 위치 설정
+        left, right, normal (※ normal은 1개만 설정)
+        data-dews-width number 컨테이너 아이템의 너비 설정
+
+        
+    */
+
+
+
+    <div class = "dews-container-panel" style="height:300px">
+        <div class = "dews-container-item" data-dews-position = "left" data-dews-width="300">
+            <div class = "dews-ui-grid" id="gridbasic"></div>
+        </div>
+        <div class = "dews-container-item" data-dews-position="normal">
+            <div class="dews-form-panel">
+                <form class ="dews-form-panel-form">
+                    <ul>
+                        <li>
+                            <label>회사코드</label>
+                            <span>
+                                <input type = "text" class = "dews-ui-textbox">
+                            </span>
+                        </li>
+                        <li>
+                            <label>회사명</label>
+                            <span>
+                                <input type = "text" class = "dews-ui-textbox">
+                            </span>
+                        </li>
+                        <li>
+                            <label>국가코드</label>
+                            <span>
+                                <select class = "dews-ui-dropdownlist"></select>
+                            </span>
+                        </li>
+                        <li>
+                            <label>회사명(영)</label>
+                            <span>
+                                <input type="text" class = "dews-ui-textbox">
+                            </span>
+                        </li>
+                        <li>
+                            <label>언어선택</label>
+                            <span>
+                                <select class = "dropdownlist"></select>
+                            </span>
+                        </li>
+                        <li>
+                            <label>통화코드</label>
+                            <span>
+                                <select class = "dropdownlist"></select>
+                            </span>
+                        </li>
+                        <li>
+                            <lable>법인구분</lable>
+                            <span>
+                                <select class = "dropdownlist"></select>
+                            </span>
+                        </li>
+                        <li>
+                            <label>법인유형</label>
+                            <span>
+                                <selcet class = "dropdownlist"></selcet>
+                            </span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <il>
+                            <label>회사코드</label>
+                            <span>
+                                <input type="text" class="dews-ui-textbox">
+                            </span>
+                        </il>
+                        <li>
+                            <label>회사명</label>
+                            <span>
+                                <input type="text" class="dews-ui-textbox">
+                            </span>
+                        </li>
+                        <li>
+                            <label>국가코드</label>
+                            <span>
+                                <select class="dropdownlist"></select>
+                            </span>
+                        </li>
+                        <li>
+                            <label>회사명(영)</label>
+                            <span>
+                                <input type="text" class="dews-ui-textbox">
+                            </span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <label>회사코드</label>
+                            <span>
+                                <input type="text" class="dews-ui-textbox">
+                            </span>
+                        </li>
+                        <li>
+                            <label>회사명</label>
+                            <span>
+                                <select class="dropdownlist">
+                            </span>
+                        </li>
+                    </ul>
+                    
+                
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script>
+    dews.ready(function(){
+        var grid, dataSource, self = this;
+
+        dataSource = dews.ui.dataSource('dataSource', {
+            grid: true,
+            transport : {
+                read: {
+                    url : dews.url.getApiUrl('FI','MyService','List')
+                }
+            },
+            schema:{
+                model:{
+                    id :'data',
+                    fields: [
+                        {field: 'ID'},
+                        {field: 'Name'},
+                        {field: 'Age'},
+                        {field: 'Address'}
+                    ]
+                }
+            }
+        });
+
+        grid = dews.ui.grid(self.$gridbasic, {
+            dataSource: dataSource,
+            selectable: true, //행 선택 가능
+            editable : true, //데이터 수정 가능
+            sortable : true, //컬럼 정렬 가능
+            height: 290,
+            columns: [
+                {
+                    field: "ID",
+                    title: "아이디",
+                    width: 100
+                },
+                {
+                    field: "Name",
+                    title: "이름",
+                    width: 200
+                },
+                {
+                    field: "Age",
+                    title: "나이",
+                    width: 100
+                },
+                {
+                    field: 'Address',
+                    title: '주소'
+                }
+            ]
+        });
+    });
+</script>

@@ -1,0 +1,380 @@
+<p>
+    <button class="dews-ui-button confirm">Confirm</button> 
+    <button class="dews-ui-button confirm disabled" disabled="disabled">Confirm Disabled</button>
+</p>
+
+<p>
+    <button class="dews-ui-button">default</button>
+    <button class="dews-ui-button disabled" disabled="disabled">Default Disabled</button>
+</p>
+
+<p>
+    <button class="dews-ui-button">Small</button>
+    <button class="dews-ui-button small disabled" disabled="disabled">Small Disabled</button>
+</p>
+
+<div class="dews-group-button primary">
+    <button class="dews-ui-button confirm">Confirm Button</button>
+    <button class="dews-ui-button confirm disabled" disabled="disabled">Confirm button</button>
+</div>
+
+<div class="dews-group-button primary">
+    <button class="dews-ui-button">Default button</button>
+    <button class="dews-ui-button disabled" disabled="disabled">Default button</button>
+</div>
+
+<div class = "dews-group-button primary">
+    <button class="dews-ui-button small">Small button</button>
+    <button class="dews-ui-button small disabled" disabled="disabled">Small button</button>
+</div>
+
+<p>
+    <button class="dews-ui-button emphasize confirm">Confirm</button>
+    <button class="dews-ui-button emphasize confirm disabled" disabled="disabled">Confirm Disabled</button>
+</p>
+
+<p>
+    <button class="dews-ui-button emphasize">Default</button>
+    <button class="dews-ui-button emphasize disabled" disabled="disabled">Default Disabled</button>
+</p>
+
+<p>
+    <button class="dews-ui-button emphasize small">Small</button>
+    <button class="dews-ui-button emphasize small disabled" disabled="disabled">Small Disabled</button>
+</p>
+
+<p>
+    <button class="dews-ui-button emphasize ico-search"></button>
+    <button class="dews-ui-button emphasize ico-set"></button>
+    <button class="dews-ui-button emphasize ico-save"></button>
+    <button class="dews-ui-button emphasize ico-add"></button>
+    <button class="dews-ui-button emphasize ico-delete"></button>
+    <button class="dews-ui-button emphasize ico-download"></button>
+    <button class="dews-ui-button emphasize ico-upload"></button>
+    <button class="dews-ui-button emphasize ico-up"></button>
+    <button class="dews-ui-button emphasize ico-down"></button>
+    <button class="dews-ui-button emphasize ico-treeExpand"></button>
+    <button class="dews-ui-button emphasize ico-treeCollapse"></button>
+    <button class="dews-ui-button emphasize ico-print"></button>
+    <button class="dews-ui-button emphasize ico-excel"></button>
+    <button class="dews-ui-button emphasize ico-edit"></button>
+</p>
+
+<p>
+    <button class="dews-ui-button ico-search ico-left">이미지가 왼쪽에 내용이 오른쪽에</button>
+</p>
+
+<div class="dews-ui-dropdownbutton confirm" id="dropdownbtn">
+    <label>Confirm</label>
+    <button type="button" id="dropbtn1">왼쪽에 열 추가</button>
+    <button type="button" id="dropbtn2">오른쪽에 열 추가</button>
+    <button type="button" id="dropbtn3">위에 열 추가</button>
+    <button type="button" id="dropbtn4">아래에 열 추가</button>
+</div>
+
+//처음 버튼만 label로 표시 후 나머지 버튼은 버튼 추가. 
+//text 작성 시 "" 없어도 된다.
+
+<div class="dews-ui-dropdownbutton" id="dropdownbtn">
+    <label>Default</label>
+    <button type="button" id="dropbtn1">왼쪽에 열 추가</button>
+    <button type="button" id="dropbtn2">오른쪽에 열 추가</button>
+    <button type="button" id="dropbtn3">위에 열 추가</button>
+    <button type="button" id="dropbtn4">아래에 열 추가</button>
+</div>
+
+<div class="dews-ui-dropdownbutton small" id="dropdownbtn">
+    <label>Small</label>
+    <button type="button" id="dropbtn1">왼쪽에 열 추가</button>
+    <button type="button" id="dropbtn2">오른쪽에 열 추가</button>
+    <button type="button" id="dropbtn3">위에 열 추가</button>
+    <button type="button" id="dropbtn4">아래에 열 추가</button>
+</div>
+
+<div class="dews-group-button confirm primary">
+    <div class="dews-ui-dropdownbutton" id="dropbtn1">
+        <label>Confirm</label>
+        <button type="button" id="dropdownbtn1">1</button>
+        <button type="button" id="dropdownbtn2">2</button>
+    </div>
+</div>
+
+<div class="dews-group-button primary">
+    <div class="dews-ui-dropdownbutton" id="dropbtn2">
+        <label>Default</label>
+        <button type="button" id="dropdownbtn1">1</button>
+        <button type="button" id="dropdownbtn2">2</button>
+    </div>
+</div>
+
+<div class="dews-ui-dropdownbutton emphasize confirm">
+    <label>Confirm</label>
+    <button type="button" id="emphasizedropbtn1">1</button>
+    <button type="button" id="emphasizedropbtn2">2</button>
+</div>
+
+<div id="dropdownbutton4">
+</div>
+
+dews.ready(function(){
+    var self=this;
+    var dropdownbutton = dews.ui.dropdownbutton('#dropdownbutton4'{
+        text : '추가';
+        button : [
+        {
+            id : 'btn1';
+            text : '왼쪽에 열 추가';
+            enable : function(){ // 활성화 여부
+                var value : false; // 변수에 false 값을 주고 
+                return value; // 변수를 반환하여서 false를 취함
+            }
+        }]
+    })
+    dropdownbutton.buttons.getBlyd('btn1').on('check',function(e)){
+        alert("왼쪽에 열 추가"); // 경고창 띄우기 
+    };
+});
+
+<div class="dews-ui-dropdownbutton" disabled="disabled" id="dropdownbtn1">
+    <label>추가</label>
+    <button type="button" id="dropbtn1">1</button>
+    <button type="button" id="dropbtn2">2</button>
+</div>
+
+dews.ready(function(){
+    var self=this;
+    var ddb = self.dropdownbtn1; //만들어진 버튼 구간 활용 
+
+    ddb.buttons.getBlyd('dropbtn1').on('check',function(e){
+        alert("왼쪽에 열 추가");
+    });
+    ddb.buttons.getBlyd('dropbtn2').on('check',function(e){
+        alert("오른쪽에 열 추가");
+    })
+
+})
+
+<button class="dews-ui-button" id="enable">활성화 설정</button>
+<button class="dews-ui-button" id="disabled">비활성화 설정</button>
+<button class="dews-ui-button" id="text">버튼문구</button>
+
+<div class="dews-ui-dropdownbutton" id="dropdownbutton">
+    <label>추가</label>
+    <button type="button" id="dropbtn1">추가</button>
+    <button type="button" id="dropbtn2">위에 추가</button>
+    <button type="button" id="dropbtn3">아래에 추가</button>
+</div>
+
+dews.ready(function(){
+    var self = this;
+    var ddb = self.dropdownbutton;
+
+    ddb.buttons.getBlyd.on('click',function(e){
+        alert('위에 추가');
+    });
+    ddb.buttons.getBlyd.on('click',function(e){
+        alert('추가');
+    });
+
+    self.$enable.on('click',function(e){
+        ddb.buttons.getBlyd.enable(true);
+    });
+
+    self.$diabled.on('click',function(e){
+        ddb.buttons[1].enable(false);
+    });
+
+    self.$text.on('click',function(e){
+        ddb.buttons[1].text('버튼추가');
+    });
+});
+
+/* 스플리트버튼 -  최상위의 버튼은 목록을 열지 않아도 바로 실행가능 */
+// 스플리트 버튼은 별도의 label없이 
+<div class="dews-ui-splitbutton confirm" id="splitbtn1">
+    <button type="button" id="splitbtn1">추가</button>
+    <button type="button" id="splitbtn2">삭제</button>
+</div>
+
+dews.ready(function(){
+    var self=this;
+    var splitbtn = self.splitbtn1;
+
+    splitbtn.buttons[0].on('click',function(e){
+        alert("추가 완료");
+    });
+    splitbtn.buttons[1].on('click',function(e){
+        alert('삭제 완료')
+    });
+});
+
+<div class="dews-group-button primary">
+    <div class="dews-ui-splitbutton confirm" id="splitbtn1">
+        <button type="button" id="splitbtn1">추가</button>
+        <button type="button" id="splitbtn2">삭제</button>
+    </div>
+</div> 
+
+<div class="dews-ui=splitbutton emphasize confirm" id="splitbtn1">
+    <button type = "button" id="splitbtn1">추가</button>
+    <button type = "button" id="splitbtn1">삭제</button>
+</div>
+
+<div id="splitbutton4">
+</div>
+
+dews.ready(function(){
+    var self = this;
+    var sbt = dews.ui.splitbutton('#splitbutton4',{
+        button : [
+            {
+                id:'sbt1';
+                text : '추가';
+            }
+            ,
+            {
+                id:'sbt2';
+                text : '추가추가';
+                enable : function(){
+                    var value = false;
+                    return value;
+                }
+            }
+        ]      
+    });
+    sbt.buttons.getBlyd('sbt1').on('click',function(e){
+        alert("추가완료");
+    });
+    sbt.buttons.getBlyd('sbt2').on('click',function(e){
+        alert('추가추가');
+    })
+};
+
+<div class="dews-ui-splitbutton confirm" id="splitbtn1" disabled="disabled">
+    <button type="button" id="sbt1">추가</button>
+    <button type="button" id="sbt2">추가2</button>
+</div>
+
+dews.ready(function(){
+    var self = this;
+    var sbt = self.splitbtn1;
+
+    sbt.buttons[0].
+})
+
+<button class = "dews-ui-button confirm" id = "btn1">버튼표시</button>
+
+dews.ready(function(){
+    var self=this;
+
+    self.$btn1.on('click',function(e){
+        dews.ui.mainbuttons.approval.show();
+        dews.ui.mainbuttons.add.show();
+        dews.ui.mainbuttons.search.show();
+        dews.ui.mainbuttons.delete.show();
+        dews.ui.mainbuttons.print.show();
+        dews.ui.mainbuttons.save.show();
+        dews.ui.mainbuttons.favorite.show();
+    });
+});
+
+dews.ready(function(){
+    var self = this;
+
+    self.$btn1.on('click',function(e){
+        dews.ui.mainbuttons.approval.hide();
+        dews.ui.mainbuttons.add.hide();
+        dews.ui.mainbuttons.search.hide();
+        dews.ui.mainbuttons.delete.hide();
+        dews.ui.mainbuttons.print.hide();
+        dews.ui.mainbuttons.save.hide();
+        dews.ui.mainbuttons.favorite.hide();
+    });
+});
+
+dews.ready(function(){
+    var self = this;
+
+    self.$btn1.on('click',function(e){
+        dews.ui.mainbuttons.approval.disable(false);
+        dews.ui.mainbuttons.add.disable(true);
+        dews.ui.mainbuttons.search.disable(false);
+        dews.ui.mainbuttons.delete.disable(true);
+        dews.ui.mainbuttons.print.disable(true);
+        dews.ui.mainbuttons.save.disable(false);
+        dews.ui.mainbuttons.favorite.disable(true);
+    });
+});
+
+dews.ready(function(){
+    dews.ui.mainbuttons.approval.click(); // 해당 메뉴를 클릭
+    dews.ui.mainbuttons.save.on('click',function(e){
+        alert("저장하시겠습니까?");
+    });
+});
+
+
+dews.ready(function(){
+    var self = this;
+
+    self.$cbt.on('click',function(e){
+        dews.ui.custombuttons.add('name',{
+            tooltip : '계산기';
+            icon : CALC_NORMAL_URL
+            hovericon : CALC_FOCUS_URL
+            click : function(e){
+                alert("클릭되었습니다.");
+            }
+        });
+    });
+});
+
+dews.ready(function(){
+    var self = this;
+
+    self.$cbt.on('click',function(e){
+        dews.ui.custombuttons.remove('calc');
+        
+    })
+})
+
+
+
+<p>
+    <input type="text" class = "dews-ui-textbox">
+    <input type="text" class = "dews-ui-textbox" palcehorder = "이곳을 비우지 마세요"> // 값이 비었을 때 보여지는 문구 
+    <input type="text" class = "dews-ui-textbox" value = "기본 값이 입력되어 있습니다."> //value는 기본 값 설정
+</p>
+
+<p>
+    <input type="text" class = "dews-ui-textbox required" value = "required"> 
+</p>
+<p>
+    <input type="text" class = "dews-ui-textbox" readonly="readonly" value="readonly">
+</p>
+<p>
+    <input type="text" class = "dews-ui-textbox" disabled="disabled" value="disabled">
+</p>
+<p>
+    <input type="password" class = "dews-ui-textbox password">
+</p>
+<p>
+    <input type="text" class = "dews-ui-textbox text-status-error" value = "error">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox text-status-success" value = "success">
+</p>
+<p>
+    <input type="text" class="dews-ui-textbox text-status-warning" value = "warning">
+</p>
+<p>
+    <textarea class="dews-ui-textbox"></textarea>
+</p>
+<script>dews.demo.source('textbox_manual','multiline');</script>
+
+<p>
+    <input type="text" id="text4" class="dews-ui-textbox">
+</p>
+<p>
+    <button id="btnSetReadonly"
+</p>
